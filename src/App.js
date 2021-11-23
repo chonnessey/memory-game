@@ -14,7 +14,7 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([])
   const [turns, setTurns] = useState(0)
-  const [life, setLife] = useState(10)
+  const [life, setLife] = useState(12)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false)
@@ -28,7 +28,7 @@ function App() {
       setChoiceTwo(null)
       setCards(shuffleCards)
       setTurns(0)
-      setLife(10)
+      setLife(12)
   }
 
   const handleChoice = (card) => {
@@ -73,6 +73,7 @@ function App() {
   useEffect(() => {
     if(life === 0) {
       shuffleCards()
+      alert('Try again!')
     }
   }, [life])
 
